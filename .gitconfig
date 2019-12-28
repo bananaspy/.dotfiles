@@ -1,0 +1,9 @@
+[user]
+	name = Vitaliy Starov
+  email = staxval@gmail.com
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+  prompt false
+[core]
+	editor = vim
