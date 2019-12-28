@@ -4,6 +4,6 @@
 [merge]
   tool = vimdiff
   conflictstyle = diff3
-  prompt false
+  prompt = false
 [core]
 	editor = vim
