@@ -3,16 +3,17 @@
 # -- software ---------------------------------------------------------------------------
 
 # repos
-add-apt-repository ppa:longsleep/golang-backports
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo add-apt-repository ppa:neovim-ppa/stable
 
-apt update
-apt upgrade
+sudo apt update
+sudo apt upgrade
 
 # tig
-apt install tig
+sudo apt install tig
 
 # zsh & tools
-apt install zsh
+sudo apt install zsh
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -26,20 +27,14 @@ git clone https://github.com/zsh-users/zsh-autosuggestions \
   ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # nvim & tools
-curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
-chmod u+x nvim.appimage
-mkdir ../Applications
-mv nvim.appimage ../Applications/
-
+sudo apt install neovim
 mkdir -p ~/.config/nvim
 
-pip3 install --user pynvim
-
-# tmux
-apt install tmux
+sudo apt install python3-pip
+sudo pip3 install --user pynvim
 
 # golang
-apt install golang-go
+sudo apt install golang-go
 
 
 # -- links ------------------------------------------------------------------------------
@@ -55,5 +50,4 @@ ln -sfn ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 mkdir -p ~/Projects/go
 mkdir -p ~/Projects/go/src
 mkdir -p ~/Projects/go/bin
-
 
