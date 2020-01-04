@@ -46,6 +46,16 @@ set number
 :set relativenumber
 :set rnu
 
+function! ToggleRelativeNumber()
+  if &relativenumber
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunction
+
+nmap <Leader>n :call ToggleRelativeNumber()<CR>
+
 " Encoding
 set encoding=utf-8
 
@@ -53,6 +63,8 @@ set encoding=utf-8
 let mapleader = ' '
 
 " Hotkeys
+nnoremap <C-w>s :w<CR>
+
 inoremap jh <Esc>
 cnoremap jh <C-C>
 
@@ -73,6 +85,6 @@ nnoremap <C-w>J :resize +5<CR>
 nnoremap <C-w>K :resize -5<CR>
 nnoremap <C-w>H :vertical resize +5<CR>
 
-nnoremap <C-w>S :source ~/.vimrc<CR>
+nnoremap <C-w>S :source ~/.config/nvim/init.vim<CR>
 
 
