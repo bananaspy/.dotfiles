@@ -47,9 +47,7 @@ ln -sfn ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 
 # -- directories ------------------------------------------------------------------------
 
-mkdir -p ~/Projects/go
-mkdir -p ~/Projects/go/src
-mkdir -p ~/Projects/go/bin
+mkdir Projects
 
 
 # -- cleanup ----------------------------------------------------------------------------
