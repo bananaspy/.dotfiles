@@ -107,8 +107,16 @@ alias vim="nvim"
 
 # Utility functions
 
+tmx() {
+  tmux new -s ${1:=default}
+}
+
+tmxa() {
+  tmux attach-session -t ${1:=default}
+}
+
 zshrc-apply() {
-  printf '%s ' 'Apply new zsh config? (y/n)'
+  printf "%s " "Apply new zsh config? (y/n)"
   read ans
   case "$ans" in
     y|Y ) source ~/.zshrc;;
