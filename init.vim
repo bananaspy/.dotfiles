@@ -35,10 +35,8 @@ set expandtab
 let g:deoplete#enable_at_startup = 1
 
 " Scrolling
-nnoremap <silent> J :call smooth_scroll#down(6, 15, 2)<CR>
-nnoremap <silent> K :call smooth_scroll#up(6, 15, 2)<CR>
-nnoremap <silent> H :call smooth_scroll#up(&scroll, 40, 5)<CR>
-nnoremap <silent> L :call smooth_scroll#down(&scroll, 40, 5)<CR>
+nnoremap <silent> H :call smooth_scroll#down(6, 15, 2)<CR>
+nnoremap <silent> L :call smooth_scroll#up(6, 15, 2)<CR>
 
 " Lines
 set number
@@ -63,7 +61,7 @@ set encoding=utf-8
 let mapleader = ' '
 
 " Hotkeys
-nnoremap <C-w>s :w<CR>
+nnoremap <Leader>s :w<CR>
 
 inoremap jh <Esc>
 cnoremap jh <C-C>
@@ -85,6 +83,7 @@ nnoremap <C-w>J :resize +5<CR>
 nnoremap <C-w>K :resize -5<CR>
 nnoremap <C-w>H :vertical resize +5<CR>
 
-nnoremap <C-w>S :source ~/.config/nvim/init.vim<CR>
-
+nnoremap <Leader>r :source ~/.config/nvim/init.vim<CR>
+nnoremap <Leader>q :wq<CR>
+nnoremap <Leader>! :q!<CR>
 

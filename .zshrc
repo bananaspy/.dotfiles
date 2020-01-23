@@ -103,7 +103,6 @@ alias vimrc="vim ~/.dotfiles/init.vim"
 alias tmuxrc="vim ~/.dotfiles/.tmux.conf"
 alias gcd="git checkout dev"
 
-# alias zshapply="source ~/.zshrc"
 alias pbcopy="xclip -selection clipboard"
 alias vim="nvim"
 
@@ -135,7 +134,7 @@ docker-ssh() {
   fi
   name=$1
   echo "Connecting to $name"
-  docker exec -i -t $name /bin/bash
+  sudo docker exec -it $name /bin/bash
 }
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
