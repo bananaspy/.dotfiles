@@ -10,6 +10,7 @@ export ZSH="/home/staxval/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="spaceship"
+source ~/.zshrc.local
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -100,6 +101,7 @@ export LC_ALL=en_US.UTF-8
 alias zshrc="vim ~/.dotfiles/.zshrc && zshrc-apply"
 alias vimrc="vim ~/.dotfiles/init.vim"
 alias tmuxrc="vim ~/.dotfiles/.tmux.conf"
+alias gcd="git checkout dev"
 
 # alias zshapply="source ~/.zshrc"
 alias pbcopy="xclip -selection clipboard"
@@ -138,3 +140,7 @@ docker-ssh() {
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

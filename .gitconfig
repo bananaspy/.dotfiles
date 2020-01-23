@@ -6,4 +6,4 @@
   conflictstyle = diff3
   prompt = false
 [core]
-	editor = vim
+	editor = nvim
