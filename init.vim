@@ -21,6 +21,9 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
+" Leader
+let mapleader = ' '
+
 " Theme
 syntax enable
 colorscheme OceanicNext
@@ -57,9 +60,6 @@ nmap <Leader>n :call ToggleRelativeNumber()<CR>
 " Encoding
 set encoding=utf-8
 
-" Leader
-let mapleader = ' '
-
 " Hotkeys
 nnoremap <Leader>s :w<CR>
 
@@ -69,7 +69,7 @@ cnoremap jh <C-C>
 nnoremap <C-w>t :NERDTreeToggle<CR>
 nnoremap <C-w>f :NERDTreeFind<CR>
 
-map <Leader>w <Plug>(easymotion-bd-w)
+map <Leader><Leader> <Plug>(easymotion-bd-w)
 
 nnoremap <C-w>gob :GoBuild<CR>
 nnoremap <C-w>gol :GoInstall<CR>
