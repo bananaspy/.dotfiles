@@ -66,8 +66,8 @@ nnoremap <Leader>s :w<CR>
 inoremap jh <Esc>
 cnoremap jh <C-C>
 
-nnoremap <C-w>t :NERDTreeToggle<CR>
-nnoremap <C-w>f :NERDTreeFind<CR>
+nnoremap <Leader>t :NERDTreeToggle<CR>
+nnoremap <Leader>f :NERDTreeFind<CR>
 
 map <Leader><Leader> <Plug>(easymotion-bd-w)
 
