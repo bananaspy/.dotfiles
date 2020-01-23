@@ -35,8 +35,8 @@ set expandtab
 let g:deoplete#enable_at_startup = 1
 
 " Scrolling
-nnoremap <silent> H :call smooth_scroll#down(6, 15, 2)<CR>
-nnoremap <silent> L :call smooth_scroll#up(6, 15, 2)<CR>
+nnoremap <silent> <Leader>j :call smooth_scroll#down(6, 15, 2)<CR>
+nnoremap <silent> <Leader>k :call smooth_scroll#up(6, 15, 2)<CR>
 
 " Lines
 set number
@@ -78,10 +78,10 @@ nnoremap <C-w>gor :GoRun<CR>
 nnoremap <C-w>goi :GoImport<space>
 nnoremap <Leader>. :GoDef<CR>
 
-nnoremap <C-w>L :vertical resize -5<CR>
-nnoremap <C-w>J :resize +5<CR>
-nnoremap <C-w>K :resize -5<CR>
-nnoremap <C-w>H :vertical resize +5<CR>
+nnoremap <Leader>L :vertical resize -5<CR>
+nnoremap <Leader>J :resize +5<CR>
+nnoremap <Leader>K :resize -5<CR>
+nnoremap <Leader>H :vertical resize +5<CR>
 
 nnoremap <Leader>r :source ~/.config/nvim/init.vim<CR>
 nnoremap <Leader>q :wq<CR>
