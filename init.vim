@@ -71,17 +71,17 @@ nnoremap <Leader>f :NERDTreeFind<CR>
 
 map <Leader><Leader> <Plug>(easymotion-bd-w)
 
-nnoremap <C-w>gob :GoBuild<CR>
-nnoremap <C-w>gol :GoInstall<CR>
-nnoremap <C-w>got :GoTest<CR>
-nnoremap <C-w>gor :GoRun<CR>
-nnoremap <C-w>goi :GoImport<space>
+nnoremap <Leader>gob :GoBuild<CR>
+nnoremap <Leader>gol :GoInstall<CR>
+nnoremap <Leader>got :GoTest<CR>
+nnoremap <Leader>gor :GoRun<CR>
+nnoremap <Leader>goi :GoImport<space>
 nnoremap <Leader>. :GoDef<CR>
 
-nnoremap <Leader>L :vertical resize -5<CR>
-nnoremap <Leader>J :resize +5<CR>
-nnoremap <Leader>K :resize -5<CR>
-nnoremap <Leader>H :vertical resize +5<CR>
+nnoremap <Leader>H :vertical resize -10<CR>
+nnoremap <Leader>J :resize +10<CR>
+nnoremap <Leader>K :resize -10<CR>
+nnoremap <Leader>L :vertical resize +10<CR>
 
 nnoremap <Leader>r :source ~/.config/nvim/init.vim<CR>
 nnoremap <Leader>q :wq<CR>
