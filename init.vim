@@ -13,6 +13,7 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -84,6 +85,7 @@ nnoremap <Leader>K :resize -10<CR>
 nnoremap <Leader>L :vertical resize +10<CR>
 
 nnoremap <Leader>r :source ~/.config/nvim/init.vim<CR>
-nnoremap <Leader>q :wq<CR>
-nnoremap <Leader>! :q!<CR>
+nnoremap <Leader>wq :wq<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>q! :q!<CR>
 
