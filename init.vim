@@ -7,7 +7,7 @@ endif
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-" Plug 'mhartington/oceanic-next'
+Plug 'mhartington/oceanic-next'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -15,7 +15,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'yuttie/comfortable-motion.vim'
-Plug 'tyrannicaltoucan/vim-deep-space'
 
 call plug#end()
 
@@ -29,11 +28,8 @@ let mapleader = ' '
 
 " Theme
 syntax enable
-" colorscheme OceanicNext
-set background=dark
+colorscheme OceanicNext
 set termguicolors
-colorscheme deep-space
-let g:airline_theme='deep_space'
 
 " Airline
 let g:airline_powerline_fonts = 1
