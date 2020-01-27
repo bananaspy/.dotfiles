@@ -15,6 +15,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'NLKNguyen/papercolor-theme'
+
 
 call plug#end()
 
@@ -28,8 +30,9 @@ let mapleader = ' '
 
 " Theme
 syntax enable
-colorscheme OceanicNext
 set termguicolors
+set background=dark
+colorscheme PaperColor
 
 " Airline
 let g:airline_powerline_fonts = 1
