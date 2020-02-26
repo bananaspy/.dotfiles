@@ -72,6 +72,7 @@ plugins=(
 common-aliases
 zsh-autosuggestions
 git
+vi-mode
 z
 )
 
