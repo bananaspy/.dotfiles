@@ -152,3 +152,5 @@ if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
+# Key bindings
+bindkey '^O' autosuggest-accept
