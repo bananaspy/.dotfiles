@@ -94,7 +94,7 @@ set encoding=utf-8
 " Hotkeys
 nnoremap <Leader>s :w<CR>
 
-inoremap kj <Esc>
+inoremap jk <Esc>
 cnoremap kj <C-C>
 
 nnoremap <Leader>t :NERDTreeToggle<CR>
