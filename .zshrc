@@ -141,6 +141,10 @@ docker-ssh() {
   sudo docker exec -it $name /bin/bash
 }
 
+git-delete-merged() {
+  git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
+}
+
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
 
 
