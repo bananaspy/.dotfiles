@@ -1,20 +1,109 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+PLATFORM='unknown'
+UNAMESTR=`uname`
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/staxval/.oh-my-zsh"
+if [[ "$UNAMESTR" == 'Darwin' ]]; then
+  PLATFORM='osx'
+else
+  PLATFORM='linux'
+fi
 
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH
+export ZSH=~/.oh-my-zsh
 
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
+ZSH_THEME="spaceship"
+
+plugins=(
+common-aliases
+zsh-autosuggestions
+git
+vi-mode
+z
+)
+
+source $ZSH/oh-my-zsh.sh
+
+
+# ENV
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:~/go/bin
+export EDITOR="vim"
+#
+# nvm
+export NVM_DIR=~/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#
+# Manually set language environment
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Key bindings
+bindkey '^O' autosuggest-accept
+
+# Aliases
+
+if [[ "$PLATFORM" == 'linux' ]]; then
+  alias pbcopy="xclip -selection clipboard"
+fi
+
+alias zshrc="vim ~/.dotfiles/.zshrc && zshrc-apply"
+alias vimrc="vim ~/.dotfiles/init.vim"
+alias tmuxrc="vim ~/.dotfiles/.tmux.conf"
+alias gcd="git checkout dev"
+alias vim="nvim"
+alias python=python3
+alias gotest='go test -v ./...'
+
+# SJ
+#
+alias frd='yarn && yarn start:desktop --auto-reload-disabled'
+alias frm='yarn && yarn start:mobile --auto-reload-disabled'
+
+
+# Utility functions
+
+tmx() {
+  tmux new -s ${1:=default}
+}
+
+tmxa() {
+  tmux attach-session -t ${1:=default}
+}
+
+zshrc-apply() {
+  printf "%s " "Apply new zsh config? (y/n)"
+  read ans
+  case "$ans" in
+    y|Y ) source ~/.zshrc;;
+    n|N ) echo New config not currently applied;;
+    * ) echo Unknown input;;
+  esac
+}
+
+docker-ssh() {
+  if (( $# == 0 ))
+  then
+    echo "USAGE: docker_ssh <container name | container id>"
+    return
+  fi
+  name=$1
+  echo "Connecting to $name"
+  sudo docker exec -it $name /bin/bash
+}
+
+git-delete-merged() {
+  git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
+}
+
+
+### Misc configuration
+#
+#
+#
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -68,93 +157,4 @@ fi
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(
-common-aliases
-zsh-autosuggestions
-git
-vi-mode
-z
-)
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# Manually set language environment
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Aliases
-alias zshrc="vim ~/.dotfiles/.zshrc && zshrc-apply"
-alias vimrc="vim ~/.dotfiles/init.vim"
-alias tmuxrc="vim ~/.dotfiles/.tmux.conf"
-alias gcd="git checkout dev"
-
-alias pbcopy="xclip -selection clipboard"
-alias vim="nvim"
-
-# Utility functions
-
-tmx() {
-  tmux new -s ${1:=default}
-}
-
-tmxa() {
-  tmux attach-session -t ${1:=default}
-}
-
-zshrc-apply() {
-  printf "%s " "Apply new zsh config? (y/n)"
-  read ans
-  case "$ans" in
-    y|Y ) source ~/.zshrc;;
-    n|N ) echo New config not currently applied;;
-    * ) echo Unknown input;;
-  esac
-}
-
-docker-ssh() {
-  if (( $# == 0 ))
-  then
-    echo "USAGE: docker_ssh <container name | container id>"
-    return
-  fi
-  name=$1
-  echo "Connecting to $name"
-  sudo docker exec -it $name /bin/bash
-}
-
-git-delete-merged() {
-  git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
-}
-
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if [ -f ~/.zshrc.local ]; then
-  source ~/.zshrc.local
-fi
-
-# Key bindings
-bindkey '^O' autosuggest-accept
