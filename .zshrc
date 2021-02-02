@@ -31,6 +31,8 @@ source $ZSH/oh-my-zsh.sh
 # ENV
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:~/go/bin
 export EDITOR="vim"
+export PRJ=~/Projects
+export DWL=~/Downloads
 #
 # nvm
 export NVM_DIR=~/.nvm
@@ -46,7 +48,7 @@ bindkey '^O' autosuggest-accept
 
 # Aliases
 
-if [[ "$PLATFORM" == 'linux' ]]; then
+if [ $PLATFORM = 'linux' ]; then
   alias pbcopy="xclip -selection clipboard"
 fi
 
